@@ -32,6 +32,7 @@ module Saddler
         # @return [Array<Comment>] comment objects
         def build_comments_with_patches(data, patches)
           comments = []
+          data['checkstyle'] ||= {}
           files = data['checkstyle']['file'] ||= []
           files = [files] if files.is_a?(Hash)
           files.each do |file|
